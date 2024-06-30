@@ -24,4 +24,4 @@ for ($i = 0 ; $i <= $n ; $i++) {
 
 }
 
-echo array_sum($stoer_output);
+echo array_sum($stoer_output).PHP_EOL;
