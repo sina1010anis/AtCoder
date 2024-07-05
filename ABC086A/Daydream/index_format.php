@@ -1,42 +1,19 @@
 <?php
-
-fscanf(STDIN, "%d %d", $n, $y);
-
-$output = [0, 0, 0];
-
-$money = ['10000' => 10000, '5000' => 5000, '1000' => 1000];
-
-for ($i = 1 ; $i <= $n ; $i++ ) {
-
-    if ($y >= $money['10000']) {
-
-        $y -= $money['10000'];
-
-        $output[0] += 1;
-
-    } elseif ($y >= $money['5000'] and $y < $money['10000']) {
-
-        $y -= $money['5000'];
-
-        $output[1] += 1;
-
-    } elseif ($y >= $money['1000']) {
-
-        $y -= $money['1000'];
-
-        $output[2] += 1;
-
+fscanf(STDIN, "%s", $s);
+$t =['dream', 'dreamer', 'erase', 'eraser'];
+$s = strrev((string) $s);
+while (strlen($s) > 0) {
+    if (strrev($t[0]) == substr($s, 0, strlen($t[0]))) {
+        $s = substr($s, strlen($t[0]));
+    } elseif (strrev($t[1]) == substr($s, 0, strlen($t[1]))) {
+        $s = substr($s, strlen($t[1]));
+    } elseif (strrev($t[2]) == substr($s, 0, strlen($t[2]))) {
+        $s = substr($s, strlen($t[2]));
+    } elseif (strrev($t[3]) == substr($s, 0, strlen($t[3]))) {
+        $s = substr($s, strlen($t[3]));
+    } else {
+        echo 'NO'."\n";
+        exit;
     }
-
-    if ($i == $n) {
-
-        if ($y != 0) {
-
-            $output = [-1, -1, -1];
-
-        }
-
-    }
-
 }
-
+echo "YES"."\n";

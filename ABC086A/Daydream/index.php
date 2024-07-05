@@ -6,25 +6,46 @@ fscanf($handle, "%s", $s);
 
 $t =['dream', 'dreamer', 'erase', 'eraser'];
 
-$output = 'NO';
+$s = strrev((string) $s);
+
+$i = strlen($s);
 
 $output_temp = [];
 
-for ($i = 0; $i <= strlen($s); $i++) {
+while (strlen($s) > 0) {
 
-    for ($j = 0; $j < count($t); $j++) {
+    if (strrev($t[0]) == substr($s, 0, strlen($t[0]))) {
 
-        $cat = substr($s, $i, strlen($t[$j]));
+        $s = substr($s, strlen($t[0]));
 
-        if ($cat == $t[$j]) {
+        $output_temp[] = $t[0]; 
 
-            $output_temp[] = $cat;
+    } elseif (strrev($t[1]) == substr($s, 0, strlen($t[1]))) {
 
-            $i += strlen($t[$j]);
+        $s = substr($s, strlen($t[1]));
 
-        }
+        $output_temp[] = $t[1]; 
 
-        echo $cat."\n";
+    } elseif (strrev($t[2]) == substr($s, 0, strlen($t[2]))) {
+
+        $s = substr($s, strlen($t[2]));
+
+        $output_temp[] = $t[2]; 
+
+    } elseif (strrev($t[3]) == substr($s, 0, strlen($t[3]))) {
+
+        $s = substr($s, strlen($t[3]));
+        
+        $output_temp[] = $t[3]; 
+
+    } else {
+
+        echo 'NO'."\n";
+
+        exit;
 
     }
+
 }
+
+echo "YES"."\n";
