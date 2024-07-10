@@ -1,0 +1,11 @@
+10
+red
+black
+white
+red
+blue
+green
+red
+miss
+red
+yellow
