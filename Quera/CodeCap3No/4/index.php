@@ -65,7 +65,3 @@ foreach ($permutations as $i) {
 }
 
 echo '0';
-
-
-
-
