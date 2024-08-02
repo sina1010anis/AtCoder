@@ -9,6 +9,7 @@
     pkgs.php83
     pkgs.php82Packages.composer
     pkgs.nodejs_20
+    pkgs.python312
   ];
   # Sets environment variables in the workspace
   env = {};
