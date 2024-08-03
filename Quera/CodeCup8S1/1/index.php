@@ -1,7 +1,5 @@
 <?php
 
-// $counts = array_count_values($data);
-
 $data = [];
 
 $data_x = [];
@@ -24,13 +22,24 @@ for ($i = 0 ; $i < 7 ; $i++) {
 
             $data_z[] = $data[$j][2];
 
+            if ($i == 6) {
+
+                $counts_x = array_count_values($data_x);
+
+                $counts_y = array_count_values($data_y);
+                
+                $counts_z = array_count_values($data_z);
+
+            }
+
        } 
 
     }
 
 }
 
-print_r($data_x);
-print_r($data_y);
-print_r($data_z);
+$key_x = array_search(3, $counts_x) ;
+$key_y = array_search(3, $counts_y) ;
+$key_z = array_search(3, $counts_z) ;
 
+echo $key_x. ' '. $key_y .' '. $key_z;
